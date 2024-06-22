@@ -24,6 +24,7 @@ rails_env = ENV['RAILS_ENV'] || :development
 
 set :environment, rails_env
 set :output, "#{Rails.root}/log/cron.log"
+env :PATH, ENV['PATH']
 
 every 3.minute do
   rake 'holohato:indexing:live_chat_message'
