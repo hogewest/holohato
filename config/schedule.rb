@@ -25,11 +25,13 @@ rails_env = ENV['RAILS_ENV'] || :development
 set :environment, rails_env
 set :output, "#{Rails.root}/log/cron.log"
 env :PATH, ENV['PATH']
+env :PATH, ENV['PATH']
+job_type :rbenv_rake, %q!eval "$(rbenv init -)"; cd :path && :environment_variable=:environment bundle exec rake :task --silent :output!
 
 every 3.minute do
-  rake 'holohato:indexing:live_chat_message'
+  rbenv_rake 'holohato:indexing:live_chat_message'
 end
 
 every '0 5,17 * * *' do
-  rake 'holohato:job:generate'
+  rbenv_rake 'holohato:job:generate'
 end
