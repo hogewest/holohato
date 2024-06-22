@@ -1,0 +1,31 @@
+<p class="p-4"><%= link_to "Holohato", root_path %></p>
+<div class="p-4 grid grid-cols-basic gap-8">
+  <div>
+    <%= form_with url: "/search", method: :get do |form| %>
+      <%= form.text_field :q, value: @q %>
+      <%= form.submit "Search", name: nil, class: "btn btn-blue" %>
+    <% end %>
+  </div>
+  <div>
+  <%= "検索結果がありません。" if @search_results.empty? %>
+  <% @search_results.each do |search_result| %>
+    <ul>
+      <li>
+        <div class="relative flex bg-white flex-row pb-6">
+          <div class="relative m-0 overflow-hidden bg-white shrink-0">
+            <%= image_tag search_result[:video].thumbnails["medium"]["url"] %>
+          </div>
+        <div class="p-2">
+          <p class="block pb-2 text-xl font-semibold">
+            <%= search_result[:video].title %>
+          </p>
+          <%= link_to({ controller: "videos", action: "show", video_id: search_result[:video].video_id, q: @q }, class: "text-blue-600 hover:underline") do %>
+            コメント数: <%= search_result[:count] %>
+          <% end %>
+        </div>
+      </div>
+    </ul>
+  <% end %>
+  <%= paginate @paginatable_array %>
+  </div>
+</div>

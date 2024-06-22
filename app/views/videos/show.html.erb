@@ -1,0 +1,25 @@
+<p class="p-4"><%= link_to "Holohato", root_path %></p>
+<div class="p-4 grid grid-cols-basic gap-8">
+  <div>
+    <p class="block pb-2 text-base">
+      <%= @video.title %>
+    </p>
+    <%= image_tag @video.thumbnails["medium"]["url"] %>
+  </div>
+  <div class="grid grid-cols-basic gap-x-3 gap-y-0.5 grid-rows-comment">
+    <% @messages.each do |message| %>
+      <div>
+        <%= link_to(youtube_video_url(@video.video_id, message.video_offset_time_msec), class: "text-blue-600 hover:underline") do %>
+          <%= message.timestamp_text %>
+        <% end %>
+      </div>
+      <div>
+        <%= message.message %>
+      </div>
+    <% end %>
+  </div>
+  <div></div>
+  <div>
+    <%= paginate @paginatable_array %>
+  </div>
+</div>
