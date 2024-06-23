@@ -20,6 +20,9 @@
             <%= search_result[:video].title %>
           </p>
           <p>
+            <%= search_result[:video].channel.title %>
+          </p>
+          <p class="pb-1">
             公開日: <%= l search_result[:video].published_at %>
           </p>
           <%= link_to({ controller: "videos", action: "show", video_id: search_result[:video].video_id, q: @q }, class: "text-blue-600 hover:underline") do %>

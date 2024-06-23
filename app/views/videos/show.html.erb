@@ -5,7 +5,10 @@
       <%= @video.title %>
     </p>
     <%= image_tag @video.thumbnails["medium"]["url"], class: "rounded" %>
-    <p class="pt-4">
+    <p class="pt-3">
+      <%= @video.channel.title %>
+    </p>
+    <p>
       公開日: <%= l @video.published_at %>
     </p>
   </div>
