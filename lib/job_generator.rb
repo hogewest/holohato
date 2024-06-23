@@ -8,6 +8,7 @@ module JobGenerator
       videos = youtube.search_videos(channel_id: channel.channel_id, published_after: published_after_iso8601)
       videos.items.each do |item|
         next if ["live", "upcoming"].include?(item.snippet.live_broadcast_content)
+        next if item.id.video_id.nil?
 
         video_id = item.id.video_id
         Video.find_or_create_by(video_id:) do |video|
