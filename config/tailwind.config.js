@@ -13,7 +13,8 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
       gridTemplateColumns: {
-        'basic': 'auto 1fr',
+        'search': 'auto 1fr',
+        'video': 'minmax(auto, 760px) 1fr',
       },
       gridTemplateRows: {
         'comment': 'max-content max-content 1fr auto;',
