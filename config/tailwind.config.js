@@ -14,10 +14,8 @@ module.exports = {
       },
       gridTemplateColumns: {
         'search': 'auto 1fr',
-        'video': 'minmax(auto, 760px) 1fr',
-      },
-      gridTemplateRows: {
-        'comment': 'max-content max-content 1fr auto;',
+        'video': 'minmax(auto, 700px) 1fr',
+        'message': 'auto 1fr',
       },
       gap: {
         '0.5': '0.1rem',

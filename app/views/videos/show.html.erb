@@ -4,12 +4,12 @@
     <p class="block pb-2 text-base">
       <%= @video.title %>
     </p>
-    <%= image_tag @video.thumbnails["medium"]["url"] %>
+    <%= image_tag @video.thumbnails["medium"]["url"], class: "rounded" %>
     <p class="pt-4">
       公開日: <%= l @video.published_at %>
     </p>
   </div>
-  <div class="grid grid-cols-basic gap-x-3 gap-y-0.5 grid-rows-comment">
+  <div class="grid grid-cols-message gap-x-3 gap-y-0.5 auto-rows-max">
     <% @messages.each do |message| %>
       <div>
         <%= link_to(youtube_video_url(@video.video_id, message.video_offset_time_msec), class: "text-blue-600 hover:underline") do %>

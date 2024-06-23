@@ -2,7 +2,7 @@
 <div class="p-4 grid grid-cols-search gap-8">
   <div>
     <%= form_with url: "/search", method: :get do |form| %>
-      <%= form.text_field :q, value: @q %>
+      <%= form.text_field :q, value: @q, class: "rounded" %>
       <%= form.submit "Search", name: nil, class: "btn btn-blue" %>
     <% end %>
   </div>
@@ -13,7 +13,7 @@
       <li>
         <div class="relative flex bg-white flex-row pb-6">
           <div class="relative m-0 overflow-hidden bg-white shrink-0">
-            <%= image_tag search_result[:video].thumbnails["medium"]["url"] %>
+            <%= image_tag search_result[:video].thumbnails["medium"]["url"], class: "rounded" %>
           </div>
         <div class="p-2">
           <p class="block pb-2 text-xl font-semibold">
