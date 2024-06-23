@@ -11,11 +11,11 @@ module JobGenerator
         next if item.id.video_id.nil?
 
         video_id = item.id.video_id
-        Video.find_or_create_by(video_id:) do |video|
-          video.title = CGI.unescape_html(item.snippet.title)
-          video.published_at = item.snippet.published_at
-          video.thumbnails = item.snippet.thumbnails
-        end
+        video = Video.find_or_initialize_by(video_id:)
+        video.title = CGI.unescape_html(item.snippet.title)
+        video.published_at = item.snippet.published_at
+        video.thumbnails = item.snippet.thumbnails
+        video.save!
 
         next if Job.exists?(video_id:)
 
