@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_12_070302) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_23_082049) do
   create_table "channels", force: :cascade do |t|
     t.string "channel_id", null: false
     t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title", null: false
     t.index ["channel_id"], name: "index_channels_on_channel_id", unique: true
   end
 
@@ -36,7 +37,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_070302) do
     t.json "thumbnails", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "channel_id", null: false
+    t.index ["channel_id"], name: "index_videos_on_channel_id"
     t.index ["video_id"], name: "index_videos_on_video_id", unique: true
   end
 
+  add_foreign_key "videos", "channels"
 end
