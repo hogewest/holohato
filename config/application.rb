@@ -36,6 +36,7 @@ module Holohato
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    config.time_zone = "Asia/Tokyo"
     config.action_dispatch.default_headers["Referrer-Policy"] = "same-origin"
     config.active_record.sqlite3_production_warning=false
   end
