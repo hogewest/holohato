@@ -32,6 +32,6 @@ every 3.minute do
   rbenv_rake 'holohato:indexing:live_chat_message'
 end
 
-every '0 5,17 * * *' do
+every '0 8,20 * * *' do
   rbenv_rake 'holohato:job:generate'
 end
