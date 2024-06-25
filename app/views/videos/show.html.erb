@@ -14,7 +14,7 @@
   </div>
   <div class="grid grid-cols-message gap-x-3 gap-y-0.5 auto-rows-max">
     <% @messages.each do |message| %>
-      <div>
+      <div class="text-right">
         <%= link_to(youtube_video_url(@video.video_id, message.video_offset_time_msec), class: "text-blue-600 hover:underline") do %>
           <%= message.timestamp_text %>
         <% end %>
