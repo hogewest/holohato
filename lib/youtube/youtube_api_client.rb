@@ -16,7 +16,7 @@ module Youtube
     end
 
     def download_live_chat_message(video_id:, path:)
-      command = "yt-dlp --no-color --no-progress --extractor-args youtube:player_client=ios,web --write-sub --no-download --retries 3 -P \"#{path}\" -o \"#{video_id}\" #{video_id}"
+      command = "yt-dlp --no-color --no-progress --extractor-args youtube:player_client=ios,web --write-sub --no-download --retries 3 -P \"#{path}\" -o \"#{video_id}\" -- #{video_id}"
       o, e, s = Open3.capture3(command)
       [o, e, s.success?, File.join(path, "#{video_id}.live_chat.json")]
     end
