@@ -10,9 +10,11 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <%= render "layouts/dark_mode_check" %>
   </head>
 
-  <body>
+  <body class="bg-white dark:bg-slate-950">
     <main>
       <%= yield %>
     </main>

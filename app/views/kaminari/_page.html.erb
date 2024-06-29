@@ -8,9 +8,9 @@
     remote:        data-remote
 -%>
 <% if page.current? %>
-  <% clazz = "min-h-[38px] min-w-[38px] flex justify-center items-center bg-gray-200 text-gray-800 py-2 px-3 text-sm rounded-lg focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none" %>
+  <% clazz = "min-h-[38px] min-w-[38px] flex justify-center items-center bg-gray-200 dark:bg-neutral-700 text-slate-800 dark:text-slate-200 py-2 px-3 text-sm rounded-lg focus:outline-none disabled:opacity-50 disabled:pointer-events-none" %>
   <span class="<%= clazz %>"><%= page %></span>
 <% else %>
-  <% clazz = "min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none" %>
+  <% clazz = "min-h-[38px] min-w-[38px] flex justify-center items-center text-slate-800 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-white/20 py-2 px-3 text-sm rounded-lg focus:outline-none focus:bg-gray-100 dark:focus:bg-white/20 disabled:opacity-50 disabled:pointer-events-none" %>
   <%= link_to_unless page.current?, page, url, {remote: remote, rel: page.rel, class: clazz} %>
 <% end %>
