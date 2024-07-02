@@ -1,6 +1,6 @@
 <%= render "application/header" %>
-<div class="py-6 px-12 flex text-slate-800 dark:text-slate-200">
-  <div class="pr-4 min-w-[480px] max-w-[580px]">
+<div class="py-6 px-12 flex max-md:flex-col text-slate-800 dark:text-slate-200">
+  <div class="pr-4 md:min-w-[480px] md:max-w-[580px] max-md:max-w-[480px]">
     <p class="block pb-2 text-base">
       <%= @video.title %>
     </p>
@@ -12,7 +12,7 @@
       公開日: <%= l @video.published_at %>
     </p>
   </div>
-  <div class="flex flex-col">
+  <div class="flex flex-col max-md:pt-6">
     <div class="grid grid-cols-message gap-x-3 gap-y-0.5 auto-rows-max">
       <% @messages.each do |message| %>
         <div class="text-right font-mono">
