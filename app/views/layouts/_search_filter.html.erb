@@ -1,0 +1,19 @@
+<dialog data-search-filter-target="dialog" class="lg:w-1/2 max-lg:w-4/5 rounded-lg bg-white dark:bg-gray-700 text-slate-800 dark:text-slate-200 border border-solid border-slate-200 dark:border-slate-800">
+  <div class="grid auto-rows-[max-content_max-content] gap-4 p-6">
+    <div class="text-xl place-self-start">
+      検索フィルタ
+    </div>
+    <div class="grid grid-cols-[max-content_1fr] place-items-start items-center gap-4">
+      <div>
+        最低コメント数
+      </div>
+      <div class="w-full">
+        <%= text_field nil, :least_count, type: "number", value: cond["least_count"], class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", "data-search-filter-target": "leastCount" %>
+      </div>
+      <div class="col-span-full	place-self-end">
+        <button class="btn cursor-pointer" data-action="search-filter#close">キャンセル</button>
+        <button class="btn btn-blue cursor-pointer" data-action="search-filter#apply">適用</button>
+      </div>
+    </div>
+  </div>
+</dialog>
