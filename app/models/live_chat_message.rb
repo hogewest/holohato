@@ -48,7 +48,7 @@ class LiveChatMessage
     }
   end
 
-  def self.search_video(q, page: 1, per: 10)
+  def self.search_video(q, page: 1, per: 10, least_count: 1)
     message_query = "*#{self.escape_wildcard_query(self.normalize_message(q))}*"
     search_body = {
       from: from(page, per),
@@ -66,7 +66,8 @@ class LiveChatMessage
                 { wildcard: { normalized_message: message_query } }
               ]
             }
-          }
+          },
+          min_children: least_count < 1 ? 1 : least_count,
         }
       }
     }

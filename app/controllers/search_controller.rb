@@ -5,7 +5,11 @@ class SearchController < ApplicationController
     return redirect_to :root if param_blank?(params[:q])
 
     @q = params[:q]
-    video_search_result = LiveChatMessage.search_video(strip_space(@q), page: params[:p].to_i)
+    video_search_result = LiveChatMessage.search_video(
+      strip_space(@q),
+      page: params[:p].to_i,
+      least_count: params[:least_count].to_i
+    )
     video_ids = video_search_result[:videos].map {_1[:video_id]}
     message_count = video_search_result[:videos].map {[_1[:video_id], _1[:message_count]]}.to_h
     videos = Video.where(video_id: video_ids).in_order_of(:video_id, video_ids).includes(:channel)
