@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+body:has(dialog[data-search-filter-target='dialog'][open]) {
+  overflow: hidden;
+}
+
+dialog {
+  box-shadow: 0 0 0 100vw rgb(0 0 0 / 0.5);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+dialog[data-search-filter-target='dialog'][open] {
+  animation: fade-in 200ms forwards;
+}
+
+dialog[data-search-filter-target='dialog'][closing] {
+  animation: fade-out 200ms forwards;
+}
