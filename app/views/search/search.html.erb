@@ -2,14 +2,14 @@
   <div class="md:w-1/2 max-md:w-11/12" data-controller="search-filter" data-action="click->search-filter#backdropClose">
     <%= form_with url: "/search", method: :get, class: "w-full text-center", data: { "search-filter-target": "form" } do |form| %>
       <div class="relative w-full">
-        <button type="submit" class="absolute inset-y-0 start-0 flex items-center ps-3 focus:outline-none">
-          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+        <button type="submit" class="absolute inset-y-0 start-0 flex items-center ps-3 pe-3 focus:outline-none text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
+          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
           </svg>
         </button>
         <%= form.text_field :q, value: @q, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 pe-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "動画を検索" %>
-        <button type="button" class="absolute inset-y-0 end-0 flex items-center pe-3 focus:outline-none" data-action="search-filter#open">
-          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+        <button type="button" class="absolute inset-y-0 end-0 flex items-center ps-3 pe-3 focus:outline-none text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" data-action="search-filter#open">
+          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.75 4H19M7.75 4a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 4h2.25m13.5 6H19m-2.25 0a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 10h11.25m-4.5 6H19M7.75 16a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 16h2.25"/>
           </svg>
         </button>
