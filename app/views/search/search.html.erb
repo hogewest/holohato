@@ -24,7 +24,7 @@
     <% @search_results.each do |search_result| %>
       <div class="grid lg:grid-cols-[320px_1fr] max-lg:grid-rows-1 gap-x-3 text-slate-800 dark:text-slate-200">
         <div>
-          <%= image_tag search_result[:video].thumbnails["medium"]["url"], class: "rounded" %>
+          <%= image_tag search_result[:video].thumbnails["medium"]["url"], class: "rounded-lg" %>
         </div>
         <div class="p-2">
           <p class="block pb-2 lg:text-xl max-lg:text-lg font-semibold">
