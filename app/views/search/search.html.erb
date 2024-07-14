@@ -20,7 +20,7 @@
 <% end %>
 <div class="py-6 lg:px-12 max-lg:px-6 grid lg:grid-cols-search max-lg:grid-rows-1 gap-8">
   <div class="grid grid-rows-1 gap-y-6">
-    <%= "検索結果がありません。" if @search_results.empty? %>
+    <% if @search_results.empty? %><span class="text-slate-800 dark:text-slate-200">検索結果が見つかりませんでした。</span><% end %>
     <% @search_results.each do |search_result| %>
       <div class="grid lg:grid-cols-[320px_1fr] max-lg:grid-rows-1 gap-x-3 text-slate-800 dark:text-slate-200">
         <div>
