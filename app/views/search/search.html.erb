@@ -30,10 +30,10 @@
           <p class="block pb-2 lg:text-xl max-lg:text-lg font-semibold">
             <%= search_result[:video].title %>
           </p>
-          <p>
+          <p class="text-gray-600 dark:text-gray-400">
             <%= search_result[:video].channel.title %>
           </p>
-          <p class="pb-1">
+          <p class="pb-1 text-gray-600 dark:text-gray-400">
             公開日時: <%= l search_result[:video].published_at %>
           </p>
           <%= link_to({ controller: "videos", action: "show", video_id: search_result[:video].video_id, q: @q }, class: "text-blue-600 dark:text-blue-400 hover:underline") do %>

@@ -1,14 +1,14 @@
 <%= render "application/header" %>
 <div class="py-6 lg:px-12 max-lg:px-6 flex max-lg:flex-col text-slate-800 dark:text-slate-200">
   <div class="pr-4 lg:min-w-[480px] lg:max-w-[580px] max-lg:max-w-[480px]">
-    <p class="block pb-2 text-base">
+    <p class="block pb-2 text-base ">
       <%= @video.title %>
     </p>
     <%= image_tag @video.thumbnails["medium"]["url"], class: "rounded" %>
-    <p class="pt-3">
+    <p class="pt-3 text-gray-600 dark:text-gray-400">
       <%= @video.channel.title %>
     </p>
-    <p>
+    <p class="text-gray-600 dark:text-gray-400">
       公開日: <%= l @video.published_at %>
     </p>
   </div>
