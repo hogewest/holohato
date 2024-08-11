@@ -28,7 +28,7 @@ env :PATH, ENV['PATH']
 env :PATH, ENV['PATH']
 job_type :rbenv_rake, %q!eval "$(rbenv init -)"; cd :path && :environment_variable=:environment bundle exec rake :task --silent :output!
 
-every 3.minute do
+every 6.minute do
   rbenv_rake 'holohato:indexing:live_chat_message'
 end
 
