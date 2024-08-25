@@ -1,3 +1,4 @@
+<% content_for(:page_title, @q) %>
 <%= render "application/header" do %>
   <div class="md:w-1/2 max-md:w-11/12" data-controller="search-filter" data-action="click->search-filter#backdropClose">
     <%= form_with url: "/search", method: :get, class: "w-full text-center", data: { "search-filter-target": "form" } do |form| %>
