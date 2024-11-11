@@ -7,7 +7,7 @@ module OpenSearch
       @client = OpenSearch::Client.new(
         host: open_search_host.to_s,
         retry_on_failure: 3,
-        log: true,
+        log: false,
         transport_options: { ssl: { verify: ssl_verify } },
       )
     end
