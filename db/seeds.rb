@@ -49,6 +49,11 @@ CHANNELS = {
   'UCtyWhCj3AqKh2dXctLkDtng' => { 'title' => 'Ririka Ch. 一条莉々華 ‐ ReGLOSS', 'description' => '一条莉々華' },
   'UCdXAk5MpyLD8594lm_OvtGQ' => { 'title' => 'Raden Ch. 儒烏風亭らでん ‐ ReGLOSS', 'description' => '儒烏風亭らでん' },
   'UC1iA6_NT4mtAcIII6ygrvCw' => { 'title' => 'Hajime Ch. 轟はじめ ‐ ReGLOSS', 'description' => '轟はじめ' },
+  'UC9LSiN9hXI55svYEBrrK-tw' => { 'title' => 'Riona Ch. 響咲リオナ - FLOW GLOW', 'description' => '響咲リオナ' },
+  'UCuI_opAVX6qbxZY-a-AxFuQ' => { 'title' => 'Niko Ch. 虎金妃笑虎 - FLOW GLOW', 'description' => '虎金妃笑虎' },
+  'UCjk2nKmHzgH5Xy-C5qYRd5A' => { 'title' => 'Su Ch. 水宮枢 - FLOW GLOW', 'description' => '水宮枢' },
+  'UCKMWFR6lAstLa7Vbf5dH7ig' => { 'title' => 'Chihaya Ch. 輪堂 千速 - FLOW GLOW', 'description' => '輪堂 千速' },
+  'UCGzTVXqMQHa4AgJVJIVvtDQ' => { 'title' => 'Vivi Ch. 綺々羅々ヴィヴィ - FLOW GLOW', 'description' => '綺々羅々ヴィヴィ' },
 }
 
 CHANNELS.each do |channel_id, data|
