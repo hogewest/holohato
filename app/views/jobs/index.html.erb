@@ -1,7 +1,8 @@
 <div class="p-6">
-  <table class="text-gray-600 dark:text-gray-400">
-    <thead class="text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+  <table class="text-sm text-left text-gray-600 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
+        <th class="px-6 py-3">ID</th>
         <th class="px-6 py-3">Video ID</th>
         <th class="px-6 py-3">state</th>
         <th class="px-6 py-3">Retry Count</th>
@@ -12,11 +13,12 @@
     <tbody>
       <% @jobs.each do |job| %>
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <td class="px-6 py-4"><%= job.id %></td>
           <td class="px-6 py-4"><%= job.video_id %></td>
           <td class="px-6 py-4"><%= job.state %></td>
           <td class="px-6 py-4"><%= job.retry_count %></td>
-          <td class="px-6 py-4"><%= job.created_at %></td>
-          <td class="px-6 py-4"><%= job.updated_at %></td>
+          <td class="px-6 py-4"><%= l job.created_at %></td>
+          <td class="px-6 py-4"><%= l job.updated_at %></td>
         </tr>
       <% end %>
     </tbody>
