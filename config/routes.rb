@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "home#index"
+  get "jobs", to: "jobs#index"
   get "search", to: "search#search"
   get "videos/:video_id", to: "videos#show"
 
