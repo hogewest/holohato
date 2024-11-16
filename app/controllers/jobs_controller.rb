@@ -1,5 +1,11 @@
 class JobsController < ApplicationController
   def index
-    @jobs = Job.order(id: :desc).page(params[:p])
+    @state = params[:state]
+    cond = {}
+    if @state.present?
+      cond[:state] = @state
+    end
+
+    @jobs = Job.where(cond).order(id: :desc).page(params[:p])
   end
 end

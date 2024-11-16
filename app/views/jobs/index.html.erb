@@ -1,4 +1,20 @@
 <div class="p-6">
+  <div class="pt-2 pb-4" data-controller="job-filter">
+    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">State</label>
+    <%= select(
+      "",
+      "state",
+      Job.states,
+      {
+        include_blank: "",
+        selected: @state
+      },
+      class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
+      data: {
+        action: "change->job-filter#onChangeState"
+      }
+    ) %>
+  </div>
   <table class="text-sm text-left text-gray-600 dark:text-gray-400">
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
