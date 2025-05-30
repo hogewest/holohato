@@ -9,6 +9,7 @@ module JobGenerator
       videos.items.each do |item|
         next if ["live", "upcoming"].include?(item.snippet.live_broadcast_content)
         next if item.id.video_id.nil?
+        next if item.snippet.channel_id != channel.channel_id
 
         video_id = item.id.video_id
         video = channel.videos.find_or_initialize_by(video_id:)
