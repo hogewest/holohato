@@ -186,6 +186,8 @@ GEM
       net-protocol
     nio4r (2.7.3)
     nkf (0.2.0)
+    nokogiri (1.16.6-aarch64-linux)
+      racc (~> 1.4)
     nokogiri (1.16.6-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.16.6-x64-mingw-ucrt)
@@ -271,6 +273,7 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
+    sqlite3 (1.7.3-aarch64-linux)
     sqlite3 (1.7.3-arm64-darwin)
     sqlite3 (1.7.3-x64-mingw-ucrt)
     sqlite3 (1.7.3-x86_64-linux)
@@ -278,6 +281,8 @@ GEM
       railties (>= 6.0.0)
     stringio (3.1.1)
     strscan (3.1.0)
+    tailwindcss-rails (2.6.1-aarch64-linux)
+      railties (>= 7.0.0)
     tailwindcss-rails (2.6.1-arm64-darwin)
       railties (>= 7.0.0)
     tailwindcss-rails (2.6.1-x64-mingw-ucrt)
@@ -314,6 +319,7 @@ GEM
     zeitwerk (2.6.16)
 
 PLATFORMS
+  aarch64-linux
   arm64-darwin-23
   x64-mingw-ucrt
   x86_64-linux
