@@ -4,7 +4,7 @@ module JobGenerator
     published_after_iso8601 = published_after.to_time.iso8601
 
     channels = Channel.order(:id).all
-    channels.each do |channel|
+    channels.each_with_index do |channel, index|
       videos = youtube.search_videos(channel_id: channel.channel_id, published_after: published_after_iso8601)
       videos.items.each do |item|
         next if ["live", "upcoming"].include?(item.snippet.live_broadcast_content)
@@ -27,6 +27,8 @@ module JobGenerator
           retry_count: 0,
         )
       end
+
+      sleep 60 if (index + 1) % 10 == 0
     end
   end
 end
