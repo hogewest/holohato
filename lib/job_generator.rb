@@ -28,7 +28,7 @@ module JobGenerator
         )
       end
 
-      sleep 60 if (index + 1) % 10 == 0
+      sleep 60 if (index + 1) % 5 == 0
     end
   end
 end
